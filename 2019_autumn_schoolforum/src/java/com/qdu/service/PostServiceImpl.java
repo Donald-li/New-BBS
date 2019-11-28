@@ -6,20 +6,19 @@
 package com.qdu.service;
 
 import com.qdu.dao.PostDao;
-import com.qdu.dao.PostDaoImpl;
 import com.qdu.pojo.Post;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author Administrator
- */
+ */@Service("PostServiceImpl")
 public class PostServiceImpl implements PostService {
 
     @Autowired
-    private PostDaoImpl postDao; 
+    private PostDao postDao; 
     @Autowired
     private Post post;
     

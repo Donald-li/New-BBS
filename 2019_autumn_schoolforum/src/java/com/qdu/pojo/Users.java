@@ -15,11 +15,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author Administrator
  */
+@Repository
 @Entity(name="Users")
 @Table(name="Users")
 public class Users implements Serializable{

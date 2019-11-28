@@ -14,11 +14,13 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author Administrator
  */
+@Repository
 @Entity(name="Post")
 @Table(name="Post")
 public class Post implements Serializable {
