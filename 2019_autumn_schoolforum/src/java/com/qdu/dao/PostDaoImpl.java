@@ -119,26 +119,33 @@ public class PostDaoImpl implements Serializable, PostDao {
     public Post getLastPost(Post post) {
         Session session = sessionFactory.getCurrentSession();
         Post post_return = session.get(Post.class, post.getpLast());
-        if (null != post_return)
+        if (null != post_return) {
             return post_return;
-        else {
+        } else {
             System.out.println("已是最前！");
             return null;
         }
 
-        
     }
 
     @Override
     public Post getNextPost(Post post) {
         Session session = sessionFactory.getCurrentSession();
         Post post_return = session.get(Post.class, post.getpNext());
-        if (null != post_return)
+        if (null != post_return) {
             return post_return;
-        else {
+        } else {
             System.out.println("已是最后！");
             return null;
         }
+    }
+
+    @Override
+    public List<Post> getPostsBySearch(String searchStr) {
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("from Post where pAbstr like '%"+searchStr+"%'");
+        List<Post> list = query.list();
+        return list;
     }
 
 }

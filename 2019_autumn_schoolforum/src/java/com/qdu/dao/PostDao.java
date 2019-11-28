@@ -19,6 +19,9 @@ public interface PostDao {
     //通过Pid查找一个帖子
     Post getPostById(String Pid);
 
+    //搜索主题含有某些字符串的过审帖子
+    List<Post> getPostsBySearch(String searchStr);
+    
     //查找指定用户的帖子
     List<Post> getAllPostByUid(String uid);
 
