@@ -14,18 +14,20 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author Administrator
  */
+@Repository
 @Entity(name="Post")
 @Table(name="Post")
 public class Post implements Serializable {
     
     @Id
     private String pId;
-    private String UId;
+//    private String UId;
     private String pTitle;
     private String pAbstr;
     private String pDetails;
@@ -43,9 +45,8 @@ public class Post implements Serializable {
     public Post() {
     }
 
-    public Post(String pId, String UId, String pTitle, String pAbstr, String pDetails, String pBlock, int pState, int pGoodsNo, String pNext, String pLast, int pBads, Users user) {
+    public Post(String pId, String pTitle, String pAbstr, String pDetails, String pBlock, int pState, int pGoodsNo, String pNext, String pLast, int pBads, Users user) {
         this.pId = pId;
-        this.UId = UId;
         this.pTitle = pTitle;
         this.pAbstr = pAbstr;
         this.pDetails = pDetails;
@@ -58,30 +59,13 @@ public class Post implements Serializable {
         this.user = user;
     }
 
-    public Post(String pId, String UId, String pTitle, String pAbstr, String pDetails, String pBlock, int pState, int pGoodsNo, String pNext, String pLast, int pBads) {
+    public Post(String pId, String pTitle, String pAbstr, String pDetails, String pBlock, Users user) {
         this.pId = pId;
-        this.UId = UId;
         this.pTitle = pTitle;
         this.pAbstr = pAbstr;
         this.pDetails = pDetails;
         this.pBlock = pBlock;
-        this.pState = pState;
-        this.pGoodsNo = pGoodsNo;
-        this.pNext = pNext;
-        this.pLast = pLast;
-        this.pBads = pBads;
-    }
-
-    public Post(String pId, String UId, String pTitle, String pAbstr, String pDetails, String pBlock, int pState, int pGoodsNo, int pBads) {
-        this.pId = pId;
-        this.UId = UId;
-        this.pTitle = pTitle;
-        this.pAbstr = pAbstr;
-        this.pDetails = pDetails;
-        this.pBlock = pBlock;
-        this.pState = pState;
-        this.pGoodsNo = pGoodsNo;
-        this.pBads = pBads;
+        this.user = user;
     }
 
     public String getpId() {
@@ -90,14 +74,6 @@ public class Post implements Serializable {
 
     public void setpId(String pId) {
         this.pId = pId;
-    }
-
-    public String getUId() {
-        return UId;
-    }
-
-    public void setUId(String UId) {
-        this.UId = UId;
     }
 
     public String getpTitle() {
@@ -171,7 +147,14 @@ public class Post implements Serializable {
     public void setpBads(int pBads) {
         this.pBads = pBads;
     }
-    
-    
-    
+
+    public Users getUser() {
+        return user;
+    }
+
+    public void setUser(Users user) {
+        this.user = user;
+    }
+
+   
 }

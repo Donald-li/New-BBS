@@ -23,12 +23,12 @@ public interface PostService {
     void caiPost(String pid);
     //获取某个板块的所有过审帖子
     List<Post> getAllPostsByBlock(String Block);
-    //搜索含有某些字符串的过审帖子
+    //搜索主题含有某些字符串的过审帖子
     List<Post> getPostsBySearch(String searchStr);
     //遍历获得一个帖子的过审子贴及其过审子帖集（获得会话）
     List<Post> getPostSession(String pId);
     //获得某个用户参与的所有过审帖子及未过审帖子
-    List<Post> getAllPostByUser();
+    List<Post> getAllPostByUser(String uId);
     //修改某个ID的帖子的下继帖子ID
     void changePNext(String pid,String pNext);
     //修改某个ID帖子的上继帖子ID

@@ -15,11 +15,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author Administrator
  */
+@Repository
 @Entity(name="Users")
 @Table(name="Users")
 public class Users implements Serializable{
@@ -39,7 +41,7 @@ public class Users implements Serializable{
     private int uBads;
     private int uState;
     
-     @OneToMany(mappedBy = "UId",cascade = CascadeType.ALL,fetch = FetchType.EAGER)    
+     @OneToMany(mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.EAGER)    
     private Set<Post> posts;
 
     public Users() {
