@@ -13,6 +13,9 @@ import java.util.List;
  * @author Administrator
  */
 public interface PostDao {
+    //获得所有帖子
+    List<Post> getAllPost();
+    
     //查找指定达到点赞数的帖子
     List<Post> getPostByGoodNoUp(int good);
 

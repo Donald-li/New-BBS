@@ -149,4 +149,12 @@ public class PostDaoImpl implements Serializable, PostDao {
         return list;
     }
 
+    @Override
+    public List<Post> getAllPost() {
+         Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("from Post");
+        List<Post> list = query.list();
+        return list;
+    }
+
 }

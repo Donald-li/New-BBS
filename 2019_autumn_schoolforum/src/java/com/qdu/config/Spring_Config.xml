@@ -22,8 +22,8 @@
     <bean id="UsersDaoImpl" class="com.qdu.dao.UserDaoImpl"></bean>
     <bean id="PostServiceImpl" class="com.qdu.service.PostServiceImpl"></bean>
     <bean id="administer" class="com.qdu.pojo.Administer" />
-    <bean id="post" class="com.qdu.pojo.Post" />
-    <bean id="users" class="com.qdu.pojo.Users" />
+    <bean id="Post" class="com.qdu.pojo.Post" />
+    <bean id="Users" class="com.qdu.pojo.Users" />
     
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="${jdbc.driverClass}"/>

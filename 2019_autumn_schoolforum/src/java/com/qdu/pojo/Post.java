@@ -86,6 +86,15 @@ public class Post implements Serializable {
         this.pBads = pBads;
     }
 
+    public Post(String pId, String UId, String pTitle, String pAbstr, String pDetails, String pBlock) {
+        this.pId = pId;
+        this.UId = UId;
+        this.pTitle = pTitle;
+        this.pAbstr = pAbstr;
+        this.pDetails = pDetails;
+        this.pBlock = pBlock;
+    }
+
     public String getpId() {
         return pId;
     }

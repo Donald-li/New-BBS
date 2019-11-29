@@ -5,19 +5,25 @@
  */
 package com.qdu.test;
 
+import com.qdu.dao.PostDao;
 import com.qdu.pojo.Post;
-import com.qdu.service.PostService;
+import com.qdu.pojo.Users;
+import java.util.List;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  *
  * @author Administrator
  */
-public class Test_ServicePost2 {
+public class Test_getAllPosts {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("com/qdu/config/Spring_Config.xml");
-        PostService postService = (PostService)applicationContext.getBean("PostServiceImpl");
-        Post post = new Post("P021","U001","测试1","测试概括","测试内容","测试板块");
-        postService.createMasterPost(post);
+        PostDao pdao = (PostDao) applicationContext.getBean("PostDaoImpl");
+        
+        List<Post> list = pdao.getAllPost();
+        
+        for(Post post:list){;
+            System.out.println(post.getpId()+"\t"+"\t"+post.getUId()+"\t"+"\t"+post.getpDetails()+"\t"+"\t"+post.getpTitle()+"\t"+"\t"+post.getpAbstr());
+        }
     }
 }
