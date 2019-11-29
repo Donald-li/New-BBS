@@ -14,14 +14,13 @@
 ">
 
     
-    <context:component-scan base-package="com.qdu.dao,com.qdu,pojo"/>
-    <!--<context:component-scan base-package="com.qdu.dao" />-->
+    <context:component-scan base-package="com.qdu.dao,com.qdu,pojo,com.qdu.service"/>
     <context:property-placeholder location="classpath:properties/jdbc.properties"/>
      
     <bean id="AdministerDaoImpl" class="com.qdu.dao.AdministerDaoImpl"></bean>
     <bean id="PostDaoImpl" class="com.qdu.dao.PostDaoImpl"></bean>
     <bean id="UsersDaoImpl" class="com.qdu.dao.UserDaoImpl"></bean>
-    <bean id="PostServiceimpl" class="com.qdu.service.PostServiceImpl"></bean>
+    <bean id="PostServiceImpl" class="com.qdu.service.PostServiceImpl"></bean>
     <bean id="administer" class="com.qdu.pojo.Administer" />
     <bean id="post" class="com.qdu.pojo.Post" />
     <bean id="users" class="com.qdu.pojo.Users" />
