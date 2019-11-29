@@ -22,7 +22,7 @@
           p:prefix="/WEB-INF/jsp/"
           p:suffix=".jsp" />
 
-    <context:property-placeholder location="classpath:properties/jdbc.properties"/>
+    <!--<context:property-placeholder location="classpath:properties/jdbc.properties"/>-->
     
     
 </beans>

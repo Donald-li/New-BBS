@@ -23,7 +23,7 @@ public class Test_getAllPosts {
         List<Post> list = pdao.getAllPost();
         
         for(Post post:list){;
-            System.out.println(post.getpId()+"\t"+"\t"+post.getUId()+"\t"+"\t"+post.getpDetails()+"\t"+"\t"+post.getpTitle()+"\t"+"\t"+post.getpAbstr());
+            System.out.println(post.getpId()+"\t"+"\t"+post.getpDetails()+"\t"+"\t"+post.getpTitle()+"\t"+"\t"+post.getpAbstr());
         }
     }
 }

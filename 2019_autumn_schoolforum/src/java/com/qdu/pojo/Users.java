@@ -41,7 +41,7 @@ public class Users implements Serializable{
     private int uBads;
     private int uState;
     
-     @OneToMany(mappedBy = "UId",cascade = CascadeType.ALL,fetch = FetchType.EAGER)    
+     @OneToMany(mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.EAGER)    
     private Set<Post> posts;
 
     public Users() {

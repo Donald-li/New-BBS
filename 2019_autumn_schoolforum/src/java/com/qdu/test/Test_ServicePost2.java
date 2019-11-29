@@ -5,7 +5,9 @@
  */
 package com.qdu.test;
 
+import com.qdu.dao.UsersDao;
 import com.qdu.pojo.Post;
+import com.qdu.pojo.Users;
 import com.qdu.service.PostService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -17,7 +19,9 @@ public class Test_ServicePost2 {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("com/qdu/config/Spring_Config.xml");
         PostService postService = (PostService)applicationContext.getBean("PostServiceImpl");
-        Post post = new Post("P021","U001","测试1","测试概括","测试内容","测试板块");
+        UsersDao udao = (UsersDao) applicationContext.getBean("UsersDaoImpl");
+        Users user = udao.getUserById("U001");
+        Post post = new Post("P021","测试1","测试概括","测试内容","测试板块",user);
         postService.createMasterPost(post);
     }
 }
