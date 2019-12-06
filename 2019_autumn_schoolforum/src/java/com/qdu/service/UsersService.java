@@ -21,7 +21,7 @@ public interface UsersService {
     List<Users> getAllUsers();
     
     //验证登录
-    Boolean login(String uID, String password);
+    Users login(String uID, String password);
 
     //创建新用户
     void createNewUser(Users user);

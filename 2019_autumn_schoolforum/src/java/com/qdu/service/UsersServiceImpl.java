@@ -34,10 +34,10 @@ public class UsersServiceImpl implements UsersService{
     }
 
     @Override
-    public Boolean login(String uID, String password) {
+    public Users login(String uID, String password) {
          Users user = usersDao.getUserById(uID);
-         if(user.getuPwd().equals(password)) return true;
-         else return false;
+         if(user!=null&&user.getuPwd().equals(password)) return user;
+         else return null;
     }
 
     @Override

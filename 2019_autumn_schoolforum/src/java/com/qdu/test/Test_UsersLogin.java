@@ -19,8 +19,8 @@ public class Test_UsersLogin {
         UsersService usersService = (UsersService) applicationContext.getBean("UsersServiceImpl");
         String uId = "U001";
         String pwd="111";
-        if(usersService.login(uId, pwd)) System.out.println("登陸成功!");
-        else System.out.println("登錄失敗!");
+//        if(usersService.login(uId, pwd)) System.out.println("登陸成功!");
+//        else System.out.println("登錄失敗!");
         
     }
 }
