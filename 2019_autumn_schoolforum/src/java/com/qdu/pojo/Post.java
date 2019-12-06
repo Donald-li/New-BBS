@@ -32,6 +32,7 @@ public class Post implements Serializable {
     private String pAbstr;
     private String pDetails;
     private String pBlock;
+    //0为未通过，1为通过普通，2为通过热门，3为置顶
     private int pState;
     private int pGoodsNo;
     private String pNext;

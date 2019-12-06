@@ -21,6 +21,8 @@
     <bean id="PostDaoImpl" class="com.qdu.dao.PostDaoImpl"></bean>
     <bean id="UsersDaoImpl" class="com.qdu.dao.UserDaoImpl"></bean>
     <bean id="PostServiceImpl" class="com.qdu.service.PostServiceImpl"></bean>
+    <bean id="AdministerServiceImpl" class="com.qdu.service.AdministerServiceImpl"></bean>
+    <bean id="UsersServiceImpl" class="com.qdu.service.UsersServiceImpl"></bean>
     <bean id="administer" class="com.qdu.pojo.Administer" />
     <bean id="Post" class="com.qdu.pojo.Post" />
     <bean id="Users" class="com.qdu.pojo.Users" />

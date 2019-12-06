@@ -23,7 +23,7 @@ public class Test_GetAllUsers {
         List<Users> list = udao.getAllUsers();
         
         for(Users user:list){;
-            System.out.println(user.getUId()+"\t"+"\t"+user.getuName()+"\t"+"\t"+user.getuImg()+"\t"+"\t"+user.getuGender()+"\t"+"\t"+user.getuPwd());
+            System.out.println(user.getUId()+"\t"+"\t"+user.getuName()+"\t"+"\t"+user.getuImg()+"\t"+"\t"+user.getuGender()+"\t"+"\t"+user.getuPwd()+"\t"+"\t"+user.getuState());
         }
         
     }

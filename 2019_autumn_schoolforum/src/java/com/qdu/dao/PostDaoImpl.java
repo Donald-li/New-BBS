@@ -30,7 +30,7 @@ public class PostDaoImpl implements Serializable, PostDao {
     @Override
     public List<Post> getPostByGoodNoUp(int good) {
         Session session = sessionFactory.getCurrentSession();
-        Query query = session.createQuery("from Post where pGoodsNo>=?good");
+        Query query = session.createQuery("from Post where pGoodsNo>=:good");
         query.setParameter("good", good);
         List<Post> list = query.list();
 
@@ -48,7 +48,7 @@ public class PostDaoImpl implements Serializable, PostDao {
     @Override
     public List<Post> getAllPostByUid(String uid) {
         Session session = sessionFactory.getCurrentSession();
-        Query query = session.createQuery("from Post where pUser = ?uid");
+        Query query = session.createQuery("from Post where pUser = :uid");
         query.setParameter("uid", uid);
         List<Post> list = query.list();
         return list;
@@ -57,7 +57,7 @@ public class PostDaoImpl implements Serializable, PostDao {
     @Override
     public List<Post> getAllPostAsState(int state) {
         Session session = sessionFactory.getCurrentSession();
-        Query query = session.createQuery("from Post where pState = ?state");
+        Query query = session.createQuery("from Post where pState = :state");
         query.setParameter("state", state);
         List<Post> list = query.list();
         return list;
@@ -68,7 +68,7 @@ public class PostDaoImpl implements Serializable, PostDao {
     public List<Post> getPostByBlock(String block) {
 
         Session session = sessionFactory.getCurrentSession();
-        Query query = session.createQuery("from Post where pBlock = ?pBlock");
+        Query query = session.createQuery("from Post where pBlock = :pBlock");
         query.setParameter("pBlock", block);
         List<Post> list = query.list();
         return list;
@@ -77,8 +77,8 @@ public class PostDaoImpl implements Serializable, PostDao {
     @Override
     public List<Post> getPostByAbstr(String abstr) {
         Session session = sessionFactory.getCurrentSession();
-        Query query = session.createQuery("from Post where pAbstr like'%?pAbstr%'");
-        query.setParameter("pAbstr", abstr);
+        Query query = session.createQuery("from Post where pAbstr like '%"+abstr+"%'");
+//        query.setParameter("pAbstr", abstr);
         List<Post> list = query.list();
         return list;
 

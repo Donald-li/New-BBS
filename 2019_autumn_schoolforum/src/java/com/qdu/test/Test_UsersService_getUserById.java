@@ -5,9 +5,8 @@
  */
 package com.qdu.test;
 
-import com.qdu.dao.PostDao;
-import com.qdu.pojo.Post;
 import com.qdu.pojo.Users;
+import com.qdu.service.UsersService;
 import java.util.List;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -15,15 +14,16 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  *
  * @author Administrator
  */
-public class Test_getAllPosts {
+public class Test_UsersService_getUserById {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("com/qdu/config/Spring_Config.xml");
-        PostDao pdao = (PostDao) applicationContext.getBean("PostDaoImpl");
         
-        List<Post> list = pdao.getAllPost();
+        UsersService usersService = (UsersService)applicationContext.getBean("UsersServiceImpl");
+        List<Users> list = usersService.getAllUsers();
         
-        for(Post post:list){;
-            System.out.println(post.getpId()+"\t"+"\t"+post.getpDetails()+"\t"+"\t"+post.getpTitle()+"\t"+"\t"+post.getpAbstr()+"\t"+"\t"+post.getpState());
+        for(Users user:list){;
+            System.out.println(user.getUId()+"\t"+"\t"+user.getuName()+"\t"+"\t"+user.getuImg()+"\t"+"\t"+user.getuGender()+"\t"+"\t"+user.getuPwd()+"\t"+"\t"+user.getuState());
         }
+        
     }
 }

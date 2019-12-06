@@ -13,7 +13,9 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
+import org.springframework.test.annotation.Commit;
 
 /**
  *
@@ -21,6 +23,7 @@ import org.springframework.stereotype.Repository;
  */
 @Transactional
 @Repository   
+@Component("UsersDaoImpl")
 public class UserDaoImpl implements Serializable,UsersDao{
 
     @Autowired
@@ -35,10 +38,10 @@ public class UserDaoImpl implements Serializable,UsersDao{
     }
 
     @Override
-    public List<Users> getUsersAsState(int state) {
+    public List<Users> getUsersAsState(int ustate) {
         Session session = sessionFactory.getCurrentSession();
-        Query query = session.createQuery("from Student where uState=?state");
-        query.setParameter("state", state);
+        Query query = session.createQuery("from Users where uState = :ustate");
+        query.setParameter("ustate", ustate);
         List<Users> list = query.list();
                 
         return list;
