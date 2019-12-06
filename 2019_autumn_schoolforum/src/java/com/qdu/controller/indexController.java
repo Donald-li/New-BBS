@@ -6,6 +6,7 @@
 package com.qdu.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -16,7 +17,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class indexController {
     
     @RequestMapping({"/","/index"}) 
-    public String index(){
+    public String index(Model model){
+        
         return "index";
     }
 }
