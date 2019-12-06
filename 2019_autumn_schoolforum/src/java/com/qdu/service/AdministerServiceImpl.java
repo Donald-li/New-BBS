@@ -22,7 +22,7 @@ import org.springframework.stereotype.Service;
 public class AdministerServiceImpl implements AdministerService{
 
     @Autowired
-    private AdministerDao  administerDao;
+    private AdministerDao administerDao;
     @Autowired
     private UsersDao usersDao;
     @Autowired

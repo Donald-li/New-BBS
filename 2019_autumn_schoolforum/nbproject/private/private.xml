@@ -3,17 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/2019秋季学期项目/资源及源代码/2019_autumn_schoolforum/web/WEB-INF/applicationContext.xml</file>
-            <file>file:/E:/2019秋季学期项目/资源及源代码/2019_autumn_schoolforum/src/java/com/qdu/pojo/Users.java</file>
-            <file>file:/E:/2019秋季学期项目/资源及源代码/2019_autumn_schoolforum/web/WEB-INF/dispatcher-servlet.xml</file>
             <file>file:/E:/2019秋季学期项目/资源及源代码/2019_autumn_schoolforum/src/java/com/qdu/service/AdministerService.java</file>
-            <file>file:/E:/2019秋季学期项目/资源及源代码/2019_autumn_schoolforum/src/java/com/qdu/pojo/Post.java</file>
-            <file>file:/E:/2019秋季学期项目/资源及源代码/2019_autumn_schoolforum/src/java/com/qdu/test/Test_ServicePost2.java</file>
-            <file>file:/E:/2019秋季学期项目/资源及源代码/2019_autumn_schoolforum/src/java/com/qdu/controller/indexController.java</file>
-            <file>file:/E:/2019秋季学期项目/资源及源代码/2019_autumn_schoolforum/src/java/com/qdu/test/Test_getAllPosts.java</file>
-            <file>file:/E:/2019秋季学期项目/资源及源代码/2019_autumn_schoolforum/web/WEB-INF/web.xml</file>
-            <file>file:/E:/2019秋季学期项目/资源及源代码/2019_autumn_schoolforum/src/java/com/qdu/test/Test3_InsertUser.java</file>
-            <file>file:/E:/2019秋季学期项目/资源及源代码/2019_autumn_schoolforum/web/WEB-INF/jsp/index.jsp</file>
+            <file>file:/E:/2019秋季学期项目/资源及源代码/2019_autumn_schoolforum/src/java/com/qdu/service/UsersService.java</file>
+            <file>file:/E:/2019秋季学期项目/资源及源代码/2019_autumn_schoolforum/src/java/com/qdu/config/Spring_Config.xml</file>
+            <file>file:/E:/2019秋季学期项目/资源及源代码/2019_autumn_schoolforum/src/java/com/qdu/service/AdministerServiceImpl.java</file>
+            <file>file:/E:/2019秋季学期项目/资源及源代码/2019_autumn_schoolforum/src/java/com/qdu/service/PostServiceImpl.java</file>
         </group>
     </open-files>
 </project-private>

@@ -5,8 +5,8 @@
  */
 package com.qdu.test;
 
-import com.qdu.dao.UsersDao;
-import com.qdu.pojo.Users;
+import com.qdu.dao.PostDao;
+import com.qdu.pojo.Post;
 import java.util.List;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -14,16 +14,14 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  *
  * @author Administrator
  */
-public class Test_GetAllUsers {
-
+public class Test_SearchAbstrPost {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("com/qdu/config/Spring_Config.xml");
-        UsersDao udao = (UsersDao) applicationContext.getBean("UsersDaoImpl");
+        PostDao postDao = (PostDao)applicationContext.getBean("PostDaoImpl");
+        List<Post> posts = postDao.getPostByAbstr("那年花开");
         
-        List<Users> list = udao.getAllUsers();
-        
-        for(Users user:list){;
-            System.out.println(user.getUId()+"\t"+"\t"+user.getuName()+"\t"+"\t"+user.getuImg()+"\t"+"\t"+user.getuGender()+"\t"+"\t"+user.getuPwd()+"\t"+"\t"+user.getuState());
+        for(Post post:posts){
+            System.out.println(post.getpId());
         }
         
     }
