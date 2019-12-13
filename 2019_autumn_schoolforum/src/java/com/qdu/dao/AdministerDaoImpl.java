@@ -21,8 +21,7 @@ import org.springframework.stereotype.Repository;
  * @author CN
  */
 @Transactional
-@Repository
-@Component("AdministerDaoImpl")
+@Repository("AdministerDaoImpl")
 public class AdministerDaoImpl implements Serializable, AdministerDao {
 
     @Autowired

@@ -93,9 +93,8 @@ public class PostDaoImpl implements Serializable, PostDao {
     @Override
     public Boolean deletePostById(String Pid) {
         Session session = sessionFactory.getCurrentSession();
-        Post post = getPostById(Pid);
-        if (null != post) {
-            session.delete(post);
+        if (null != session.get(Post.class, Pid)) {
+            session.delete(session.get(Post.class, Pid));
             return true;
         } else {
             System.out.println("删除对象不存在！");
@@ -106,8 +105,7 @@ public class PostDaoImpl implements Serializable, PostDao {
     @Override
     public Boolean addPost(Post post) {
         Session session = sessionFactory.getCurrentSession();
-        Post post_test = getPostById(post.getpId());
-        if (null == post_test) {
+        if (null == session.get(Post.class, post.getpId())) {
             session.save(post);
             return true;
         } else {
@@ -119,9 +117,8 @@ public class PostDaoImpl implements Serializable, PostDao {
     @Override
     public Post getLastPost(Post post) {
         Session session = sessionFactory.getCurrentSession();
-        Post post_return = session.get(Post.class, post.getpLast());
-        if (null != post_return) {
-            return post_return;
+        if (null != session.get(Post.class, post.getpLast())) {
+            return session.get(Post.class, post.getpLast());
         } else {
             System.out.println("已是最前！");
             return null;
@@ -132,9 +129,8 @@ public class PostDaoImpl implements Serializable, PostDao {
     @Override
     public Post getNextPost(Post post) {
         Session session = sessionFactory.getCurrentSession();
-        Post post_return = session.get(Post.class, post.getpNext());
-        if (null != post_return) {
-            return post_return;
+        if (null != session.get(Post.class, post.getpNext())) {
+            return session.get(Post.class, post.getpNext());
         } else {
             System.out.println("已是最后！");
             return null;

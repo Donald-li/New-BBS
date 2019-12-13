@@ -22,8 +22,7 @@ import org.springframework.test.annotation.Commit;
  * @author CN
  */
 @Transactional
-@Repository   
-@Component("UsersDaoImpl")
+@Repository("UsersDaoImpl")
 public class UserDaoImpl implements Serializable,UsersDao{
 
     @Autowired

@@ -26,7 +26,7 @@ public class Post implements Serializable {
     
     @Id
     private String pId;
-//    private String UId;
+    private String UId;
     private String pTitle;
     private String pAbstr;
     private String pDetails;

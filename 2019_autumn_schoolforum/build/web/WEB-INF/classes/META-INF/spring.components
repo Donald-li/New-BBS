@@ -1,5 +1,5 @@
 #
-#Fri Dec 13 15:00:27 CST 2019
+#Fri Dec 13 20:21:02 CST 2019
 com.qdu.dao.AdministerDaoImpl=org.springframework.stereotype.Component,javax.transaction.Transactional
 com.qdu.pojo.Administer=javax.persistence.Entity,org.springframework.stereotype.Component,javax.persistence.Table
 com.qdu.service.PostServiceImpl=org.springframework.stereotype.Component
