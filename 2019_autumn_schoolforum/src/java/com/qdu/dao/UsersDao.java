@@ -24,7 +24,7 @@ public interface UsersDao {
     List<Users> getAllUsers();
 
     //更新用户
-    void updateUser(Users users);
+    void updateUser(String uid);
 
     //通过Id删除用户
     Boolean deleteUser(String uid);

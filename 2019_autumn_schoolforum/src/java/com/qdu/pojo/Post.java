@@ -9,7 +9,6 @@ import java.io.Serializable;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -21,7 +20,7 @@ import org.springframework.stereotype.Repository;
  * @author Administrator
  */
 @Repository
-@Entity(name="Post")
+@Entity
 @Table(name="Post")
 public class Post implements Serializable {
     
@@ -39,14 +38,14 @@ public class Post implements Serializable {
     private String pLast;
     private int pBads;
     
-    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-    @JoinColumn(name="uId")
-    private Users user;
+//    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+//    @JoinColumn(name="uId")
+//    private Users user;
 
     public Post() {
     }
 
-    public Post(String pId, String pTitle, String pAbstr, String pDetails, String pBlock, int pState, int pGoodsNo, String pNext, String pLast, int pBads, Users user) {
+    public Post(String pId, String pTitle, String pAbstr, String pDetails, String pBlock, int pState, int pGoodsNo, String pNext, String pLast, int pBads) {
         this.pId = pId;
         this.pTitle = pTitle;
         this.pAbstr = pAbstr;
@@ -57,16 +56,14 @@ public class Post implements Serializable {
         this.pNext = pNext;
         this.pLast = pLast;
         this.pBads = pBads;
-        this.user = user;
     }
 
-    public Post(String pId, String pTitle, String pAbstr, String pDetails, String pBlock, Users user) {
+    public Post(String pId, String pTitle, String pAbstr, String pDetails, String pBlock) {
         this.pId = pId;
         this.pTitle = pTitle;
         this.pAbstr = pAbstr;
         this.pDetails = pDetails;
         this.pBlock = pBlock;
-        this.user = user;
     }
 
     public String getpId() {
@@ -147,15 +144,5 @@ public class Post implements Serializable {
 
     public void setpBads(int pBads) {
         this.pBads = pBads;
-    }
-
-    public Users getUser() {
-        return user;
-    }
-
-    public void setUser(Users user) {
-        this.user = user;
-    }
-
-   
+    }  
 }

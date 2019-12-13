@@ -14,19 +14,17 @@ import org.springframework.stereotype.Service;
 /**
  *
  * @author Administrator
- */@Service("PostServiceImpl")
+ */
+@Service("PostServiceImpl")
 public class PostServiceImpl implements PostService {
 
     @Autowired
     private PostDao postDao; 
-    @Autowired
-    private Post post;
     
     
     @Override
     public Post getPostById(String pid) {
-        post = postDao.getPostById(pid);
-        return post ;
+        return  postDao.getPostById(pid) ;
     }
 
     @Override
@@ -37,20 +35,18 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public void zanPost(String pid) {
-        post  = postDao.getPostById(pid);
-        int goodNo = post.getpGoodsNo();
+        int goodNo = postDao.getPostById(pid).getpGoodsNo();
         goodNo++;
-        post.setpGoodsNo(goodNo);
-        postDao.updatePost(post);
+        postDao.getPostById(pid).setpGoodsNo(goodNo);
+        postDao.updatePost(pid);
     }
 
     @Override
     public void caiPost(String pid) {
-        post  = postDao.getPostById(pid);
-        int badNo = post.getpBads();
+        int badNo = postDao.getPostById(pid).getpBads();
         badNo++;
-        post.setpGoodsNo(badNo);
-        postDao.updatePost(post);
+        postDao.getPostById(pid).setpGoodsNo(badNo);
+        postDao.updatePost(pid);
     }
 
     @Override
@@ -67,12 +63,11 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public List<Post> getPostSession(String pId) {
-        post = postDao.getPostById(pId);
         List<Post> list = null;
-        list.add(post);
-        while(!post.getpNext().equals(null)){
-                post = postDao.getPostById(post.getpNext());
-                list.add(post);
+        list.add(postDao.getPostById(pId));
+        while(!postDao.getPostById(pId).getpNext().equals(null)){
+                postDao.getPostById(postDao.getPostById(pId).getpNext());
+                list.add(postDao.getPostById(pId));
         }
         return list;
     }
@@ -85,43 +80,37 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public void changePNext(String pid, String pNext) {
-        post = postDao.getPostById(pid);
-        post.setpNext(pNext);
-        postDao.updatePost(post);
+        postDao.getPostById(pid).setpNext(pNext);
+        postDao.updatePost(pid);
         
     }
 
     @Override
     public void changePLast(String pid, String pLast) {
-        post = postDao.getPostById(pid);
-        post.setpLast(pLast);
-        postDao.updatePost(post);
+        postDao.getPostById(pid).setpLast(pLast);
+        postDao.updatePost(pid);
     }
 
     @Override
     public void changePost(String pId, String pDetail) {
-        post = postDao.getPostById(pId);
-        post.setpDetails(pDetail);
-        postDao.updatePost(post);
+        postDao.getPostById(pId).setpDetails(pDetail);
+        postDao.updatePost(pId);
     }
 
     @Override
     public void changePostAbster(String pId, String pAbstr) {
-        post = postDao.getPostById(pId);
-        post.setpAbstr(pAbstr);
-        postDao.updatePost(post);
+        postDao.getPostById(pId).setpAbstr(pAbstr);
+        postDao.updatePost(pId);
     }
 
     @Override
     public void createMasterPost(Post post1) {
-        post = post1;
-        postDao.addPost(post);
+        postDao.addPost(post1);
     }
 
     @Override
     public void createSonPost(Post post1) {
-        post = post1;
-        postDao.addPost(post);
+        postDao.addPost(post1);
     }
     
 }

@@ -47,9 +47,7 @@ public class UsersServiceImpl implements UsersService{
 
     @Override
     public void changeUserInfo(Users user) {
-        Users user1 = usersDao.getUserById(user.getUId());
-        user1 = user;
-        usersDao.updateUser(user1);
+        usersDao.updateUser(user.getUId());
     }
 
     @Override
@@ -59,11 +57,10 @@ public class UsersServiceImpl implements UsersService{
 
     @Override
     public void reportUser(String uId) {
-        Users user = usersDao.getUserById(uId);
-        int bads = user.getuBads();
+        int bads = usersDao.getUserById(uId).getuBads();
         bads++;
-        user.setuBads(bads);
-        usersDao.updateUser(user);
+        usersDao.getUserById(uId).setuBads(bads);
+        usersDao.updateUser(uId);
     }
     
 }

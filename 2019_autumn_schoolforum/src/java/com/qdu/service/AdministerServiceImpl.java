@@ -42,30 +42,26 @@ public class AdministerServiceImpl implements AdministerService{
 
     @Override
     public void passAPost(String pId) {
-        Post post =postDao.getPostById(pId);
-        post.setpState(1);
-        postDao.updatePost(post);
+       postDao.getPostById(pId).setpState(1);
+        postDao.updatePost(pId);
     }
 
     @Override
     public void passAUser(String uId) {
-        Users user = usersDao.getUserById(uId);
-        user.setuState(1);
-        usersDao.updateUser(user);
+        usersDao.getUserById(uId).setuState(1);
+        usersDao.updateUser(uId);
     }
 
     @Override
     public void banApost(String pId) {
-        Post post = postDao.getPostById(pId);
-        post.setpState(0);
-        postDao.updatePost(post);
+        postDao.getPostById(pId).setpState(0);
+        postDao.updatePost(pId);
     }
 
     @Override
     public void banAUser(String uId) {
-        Users user = usersDao.getUserById(uId);
-        user.setuState(0);
-        usersDao.updateUser(user);
+        usersDao.getUserById(uId).setuState(0);
+        usersDao.updateUser(uId);
     }
 
     @Override

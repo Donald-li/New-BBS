@@ -13,7 +13,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -21,7 +20,8 @@ import org.springframework.stereotype.Repository;
  * @author CN
  */
 @Transactional
-@Component("PostDaoImpl")
+//@Component("PostDaoImpl")
+@Repository("PostDaoImpl")
 public class PostDaoImpl implements Serializable, PostDao {
 
     @Autowired
@@ -85,9 +85,9 @@ public class PostDaoImpl implements Serializable, PostDao {
     }
 
     @Override
-    public void updatePost(Post post) {
+    public void updatePost(String pid) {
         Session session = sessionFactory.getCurrentSession();
-        session.save(post);
+        session.update(session.get(Post.class, pid));
     }
 
     @Override

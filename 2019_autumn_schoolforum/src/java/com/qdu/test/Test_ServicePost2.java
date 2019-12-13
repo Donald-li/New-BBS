@@ -21,7 +21,7 @@ public class Test_ServicePost2 {
         PostService postService = (PostService)applicationContext.getBean("PostServiceImpl");
         UsersDao udao = (UsersDao) applicationContext.getBean("UsersDaoImpl");
         Users user = udao.getUserById("U001");
-        Post post = new Post("P021","测试1","测试概括","测试内容","测试板块",user);
+        Post post = new Post("P021","测试1","测试概括","测试内容","测试板块");
         postService.createMasterPost(post);
     }
 }

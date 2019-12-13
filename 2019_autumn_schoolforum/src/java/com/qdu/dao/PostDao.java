@@ -38,7 +38,7 @@ public interface PostDao {
     List<Post> getPostByAbstr(String abstr);
 
     //更新一个帖子
-    void updatePost(Post post);
+    void updatePost(String pid);
 
     //通过PID删除一个帖子
     Boolean deletePostById(String Pid);

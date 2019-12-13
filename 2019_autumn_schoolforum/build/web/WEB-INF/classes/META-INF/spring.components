@@ -1,10 +1,12 @@
 #
-#Fri Nov 29 14:50:23 CST 2019
-com.qdu.pojo.Post=javax.persistence.Entity,org.springframework.stereotype.Component,javax.persistence.Table
-com.qdu.pojo.Users=javax.persistence.Entity,org.springframework.stereotype.Component,javax.persistence.Table
+#Fri Dec 13 15:00:27 CST 2019
 com.qdu.dao.AdministerDaoImpl=org.springframework.stereotype.Component,javax.transaction.Transactional
-com.qdu.dao.UserDaoImpl=org.springframework.stereotype.Component,javax.transaction.Transactional
 com.qdu.pojo.Administer=javax.persistence.Entity,org.springframework.stereotype.Component,javax.persistence.Table
 com.qdu.service.PostServiceImpl=org.springframework.stereotype.Component
-com.qdu.controller.indexController=org.springframework.stereotype.Component
+com.qdu.dao.UserDaoImpl=org.springframework.stereotype.Component,javax.transaction.Transactional
+com.qdu.service.AdministerServiceImpl=org.springframework.stereotype.Component
+com.qdu.pojo.Post=javax.persistence.Entity,org.springframework.stereotype.Component,javax.persistence.Table
+com.qdu.pojo.Users=javax.persistence.Entity,org.springframework.stereotype.Component,javax.persistence.Table
 com.qdu.dao.PostDaoImpl=org.springframework.stereotype.Component,javax.transaction.Transactional
+com.qdu.controller.indexController=org.springframework.stereotype.Component
+com.qdu.service.UsersServiceImpl=org.springframework.stereotype.Component

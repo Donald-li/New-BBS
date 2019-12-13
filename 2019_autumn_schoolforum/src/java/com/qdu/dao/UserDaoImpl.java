@@ -59,9 +59,9 @@ public class UserDaoImpl implements Serializable,UsersDao{
     }
 
     @Override
-    public void updateUser(Users users) {
+    public void updateUser(String uid) {
         Session session = sessionFactory.getCurrentSession();
-        session.update(users);
+        session.update(session.get(Users.class, uid));
         
     }
 
