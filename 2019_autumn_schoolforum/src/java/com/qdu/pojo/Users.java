@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
@@ -37,7 +38,9 @@ public class Users implements Serializable{
     private String uPid;
     private String uEM;
     private String uPhoneNo;
+    @Column(columnDefinition = "int default 0")
     private int uBads;
+    @Column(columnDefinition = "int default 0")
     private int uState;
     
 //     @OneToMany(mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.EAGER)    

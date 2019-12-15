@@ -15,6 +15,7 @@
 
     
     <context:component-scan base-package="com.qdu.dao,com.qdu.service"/>
+    <context:component-scan base-package="com.qdu.controller"/>
     <context:property-placeholder location="classpath:properties/jdbc.properties"/>
     
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">

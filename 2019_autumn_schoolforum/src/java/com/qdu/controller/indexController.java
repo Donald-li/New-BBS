@@ -24,10 +24,10 @@ public class indexController {
             
     @RequestMapping({"/","/index"}) 
     public String index(Model model){
-        List<Post> post = postDao.getAllPost();
-//        getPostById("P001");
+//        List<Post> post = postDao.getAllPost();
+////        getPostById("P001");
         
-        model.addAttribute("Post", post);
+//        model.addAttribute("Post", post);
         
         return "index";
     }

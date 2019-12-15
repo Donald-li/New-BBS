@@ -31,9 +31,9 @@ public class UserDaoImpl implements Serializable,UsersDao{
     @Override
     public Users getUserById(String uid) {
         Session session = sessionFactory.getCurrentSession();
-        Users user = session.get(Users.class, uid);
-        
-        return user;
+        if(session.get(Users.class, uid)!=null)
+            return session.get(Users.class, uid);
+        else return null;
     }
 
     @Override
@@ -68,9 +68,8 @@ public class UserDaoImpl implements Serializable,UsersDao{
     public Boolean deleteUser(String uid) {
         Session session = sessionFactory.getCurrentSession();
         
-        Users user = getUserById(uid);
-        if(null!=user){
-            session.delete(user);
+        if(null!=getUserById(uid)){
+            session.delete(getUserById(uid));
             return true;
         }else{
             System.out.println("该用户不存在");
@@ -82,8 +81,7 @@ public class UserDaoImpl implements Serializable,UsersDao{
     @Override
     public Boolean addUser(Users users) {
         Session session = sessionFactory.getCurrentSession();
-        Users user_test = getUserById(users.getUId());
-        if(null==user_test){
+        if(null==getUserById(users.getUId())){
             session.save(users);
             return true;
         }else{

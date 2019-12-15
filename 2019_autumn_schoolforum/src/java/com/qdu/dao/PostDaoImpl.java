@@ -40,9 +40,8 @@ public class PostDaoImpl implements Serializable, PostDao {
     @Override
     public Post getPostById(String Pid) {
         Session session = sessionFactory.getCurrentSession();
-        Post post = session.get(Post.class, Pid);
 
-        return post;
+        return session.get(Post.class, Pid);
     }
 
     @Override
