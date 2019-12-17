@@ -7,6 +7,7 @@ package com.qdu.pojo;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -42,6 +43,8 @@ public class Users implements Serializable{
     private int uBads;
     @Column(columnDefinition = "int default 0")
     private int uState;
+    @OneToMany(mappedBy = "user",cascade = CascadeType.REMOVE,fetch = FetchType.EAGER)
+    private List<Post> posts;
     
 //     @OneToMany(mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.EAGER)    
 //    private Set<Post> posts;

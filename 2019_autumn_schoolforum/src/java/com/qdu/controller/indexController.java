@@ -27,7 +27,7 @@ public class indexController {
 //        List<Post> post = postDao.getAllPost();
 ////        getPostById("P001");
         
-//        model.addAttribute("Post", post);
+        model.addAttribute("Post", postDao.getPostByBlock("全职高手"));
         
         return "index";
     }

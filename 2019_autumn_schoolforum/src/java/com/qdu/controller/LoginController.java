@@ -39,7 +39,8 @@ public class LoginController {
     public String login(String userid,
                         String password,
                         HttpSession session,Model model,RedirectAttributes modelMap) {
-        if(usersDao.getUserById(userid).getuPwd().equals(password)){
+        if(usersDao.getUserById(userid)==null) return "loginError";
+        else if(usersDao.getUserById(userid).getuPwd().equals(password)){
             session.setAttribute("users", usersDao.getUserById(userid));
             return "shouye";
         }
